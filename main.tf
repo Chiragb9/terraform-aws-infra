@@ -12,24 +12,24 @@ resource "aws_security_group" "allow_local" {
   vpc_id      = data.aws_vpc.default_vpc.id
 
   ingress {
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["103.76.58.11/32"]
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["103.76.58.11/32"]
   }
 
   ingress {
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = ["103.76.58.11/32"]
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["103.76.58.11/32"]
   }
 
   ingress {
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["103.76.58.11/32"]
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["103.76.58.11/32"]
   }
 
   egress {
@@ -45,7 +45,7 @@ resource "aws_security_group" "allow_local" {
 
 
 module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+  source = "terraform-aws-modules/ec2-instance/aws"
 
   name = "my-vapp"
 
